@@ -1,0 +1,28 @@
+name: Build Mac App
+on: [push] # コードが置かれたら自動スタート
+
+jobs:
+  build-mac:
+    runs-on: macos-latest # クラウド上の最新Macを起動
+    steps:
+      - name: コードを取得
+        uses: actions/checkout@v3
+
+      - name: Pythonの準備
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 必要なライブラリをインストール
+        run: |
+          pip install pandas numpy matplotlib pyinstaller
+
+      - name: Mac用アプリの作成（ビルド）
+        run: |
+          pyinstaller --onefile --windowed graph_tool.py
+
+      - name: 完成したアプリを保存
+        uses: actions/upload-artifact@v4
+        with:
+          name: mac-application
+          path: dist/graph_tool.app
