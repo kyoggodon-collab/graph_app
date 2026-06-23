@@ -19,7 +19,7 @@ jobs:
 
       - name: Mac用アプリの作成（ビルド）
         run: |
-          pyinstaller --onefile --windowed graph_tool.py
+          pyinstaller --onefile --windowed graph_app.py
 
       - name: 完成したアプリを保存
         uses: actions/upload-artifact@v4
