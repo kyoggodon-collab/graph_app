@@ -1,5 +1,4 @@
-最新版はこちらから
-https://github.com/kyoggodon-collab/graph_app/releases/tag/v1.0.0
+最新版は[こちら](https://github.com/kyoggodon-collab/graph_app/releases)から
 
  概要
 Excelなどからコピーしたデータを利用して、複数軸（Y1〜Y7など）の折れ線グラフを直感的に作成・微調整できるデスクトップツールです。
